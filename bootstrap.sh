@@ -7,11 +7,6 @@ echo "percona-server-server-5.6 percona-server-server/root_password password roo
 echo "percona-server-server-5.6 percona-server-server/root_password_again password root" | sudo debconf-set-selections
 sudo apt-get install -qq -y percona-server-server-5.6 percona-server-client-5.6
 
-# nodejs 
-sudo apt-get install python-software-properties
-sudo apt-add-repository ppa:chris-lea/node.js
-sudo curl -sL https://deb.nodesource.com/setup | sudo bash -
-
 # nginx
 sudo apt-get install -y nginx
 
@@ -84,36 +79,3 @@ sudo service mysql restart
 
 # git
 sudo apt-get -y install git
-
-# node / npm
-sudo apt-get -y install nodejs
-sudo apt-get -y install build-essential
-cd ~/
-curl -O -L https://npmjs.org/install.sh
-sudo sh install.sh
-
-# devtools
-sudo npm install -g yo
-sudo npm install -g bower
-sudo npm install -g grunt-cli
-
-sudo npm install -g yo generator-wordpress
-
-(
-sudo cat << 'EOF'
-{
-	"url": "http://play.lcl",
-	"tablePrefix": "wp_",
-	"dbHost": "localhost",
-	"dbName": "play",
-	"dbUser": "root",
-	"dbPass": "root",
-	"git": true,
-	"submodule": true,
-	"wpDir": "core",
-	"contentDir": "content",
-	"installTheme": false,
-	"customDirs": true
-}
-EOF
-) > /var/www/html/play/.yeopress

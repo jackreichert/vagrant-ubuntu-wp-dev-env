@@ -7,14 +7,14 @@ curl -sL https://deb.nodesource.com/setup | sudo bash -
 curl -sL https://npmjs.org/install.sh | sh
 sudo apt-get -y install nodejs
 sudo npm update -g npm
-npm config set prefix ~/npm
-export PATH="$PATH:$HOME/npm/bin"
+# npm config set prefix ~/npm
+# export PATH="$PATH:$HOME/npm/bin"
 
 # devtools
-npm install -g yo
-npm install -g bower
-npm install -g grunt-cli
-npm install -g yo generator-wordpress
+#npm install -g yo
+#npm install -g bower
+#npm install -g grunt-cli
+#npm install -g yo generator-wordpress
 
 (
 sudo cat << 'EOF'
