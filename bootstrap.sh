@@ -98,3 +98,22 @@ sudo npm install -g bower
 sudo npm install -g grunt-cli
 
 sudo npm install -g yo generator-wordpress
+
+(
+sudo cat << 'EOF'
+{
+	"url": "http://play.lcl",
+	"tablePrefix": "wp_",
+	"dbHost": "localhost",
+	"dbName": "play",
+	"dbUser": "root",
+	"dbPass": "root",
+	"git": true,
+	"submodule": true,
+	"wpDir": "core",
+	"contentDir": "content",
+	"installTheme": false,
+	"customDirs": true
+}
+EOF
+) > /var/www/html/play/.yeopress
