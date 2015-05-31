@@ -72,6 +72,9 @@ sudo cat << 'EOF'
 EOF
 ) > /var/www/html/play/index.php
 
+# files are getting corrupted turn sendfile off
+sudo sed -i 's/sendfile on/sendfile off/g' /etc/nginx/nginx.conf
+
 # restart after reconfig
 sudo service nginx restart 
 sudo service php5-fpm restart

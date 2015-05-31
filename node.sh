@@ -7,8 +7,11 @@ curl -sL https://deb.nodesource.com/setup | sudo bash -
 curl -sL https://npmjs.org/install.sh | sh
 sudo apt-get -y install nodejs
 sudo npm update -g npm
-# npm config set prefix ~/npm
-# export PATH="$PATH:$HOME/npm/bin"
+
+# Run this after you vagrant ssh in
+#npm config set prefix ~/npm
+#export PATH="$PATH:$HOME/npm/bin"
+#echo "export NODE_PATH=$NODE_PATH:/home/vagrant/npm/lib/node_modules" >> ~/.bashrc && source ~/.bashrc
 
 # devtools
 #npm install -g yo
