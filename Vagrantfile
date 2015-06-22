@@ -40,7 +40,9 @@ Vagrant.configure(2) do |config|
   #   # Customize the amount of memory on the VM:
      vb.memory = "1024"
    end
+    
+    config.ssh.forward_agent = true 
 
     config.vm.provision :shell, path: "bootstrap.sh"
-    config.vm.provision :shell, path: "node.sh"
+    config.vm.provision :shell, path: "node.sh", privileged: false
 end

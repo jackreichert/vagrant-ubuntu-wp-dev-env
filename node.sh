@@ -1,39 +1,20 @@
 # nodejs 
-sudo apt-get install python-software-properties
-sudo apt-get install build-essential
+cd /home/vagrant 
 
-# node / npm
-curl -sL https://deb.nodesource.com/setup | sudo bash -
-curl -sL https://npmjs.org/install.sh | sh
-sudo apt-get -y install nodejs
-sudo npm update -g npm
+# nvm / node / npm
+wget -qO- https://raw.github.com/creationix/nvm/master/install.sh | sh
 
-# Run this after you vagrant ssh in
-#npm config set prefix ~/npm
-#export PATH="$PATH:$HOME/npm/bin"
-#echo "export NODE_PATH=$NODE_PATH:/home/vagrant/npm/lib/node_modules" >> ~/.bashrc && source ~/.bashrc
+# This enables NVM without a logout/login
+export NVM_DIR="/home/vagrant/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+# Install a node and alias
+nvm install 0.12.4
+nvm alias default 0.12.4
 
 # devtools
-#npm install -g yo
-#npm install -g bower
-#npm install -g grunt-cli
-#npm install -g yo generator-wordpress
+npm install -g yo
+npm install -g bower
+npm install -g grunt-cli
+npm install -g yo generator-wordpress
 
-(
-sudo cat << 'EOF'
-{
-	"url": "http://play.lcl",
-	"tablePrefix": "wp_",
-	"dbHost": "localhost",
-	"dbName": "play",
-	"dbUser": "root",
-	"dbPass": "root",
-	"git": true,
-	"submodule": true,
-	"wpDir": "core",
-	"contentDir": "content",
-	"installTheme": false,
-	"customDirs": true
-}
-EOF
-) > /var/www/html/play/.yeopress
