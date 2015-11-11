@@ -9,12 +9,11 @@ export NVM_DIR="/home/vagrant/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 # Install a node and alias
-nvm install 0.12.4
-nvm alias default 0.12.4
+nvm install 5.0
+nvm alias default 5.0
 
 # devtools
 npm install -g yo
 npm install -g bower
-npm install -g grunt-cli
+npm install -g gulp
 npm install -g yo generator-wordpress
-

@@ -20,7 +20,7 @@ Vagrant.configure(2) do |config|
   config.vm.network "private_network", ip: "192.168.33.10"
   config.vm.hostname = 'play.lcl'
     
-  # Apache
+  # nginx ports
   config.vm.network :forwarded_port, guest: 80, host: 8089
   config.vm.network :forwarded_port, guest: 443, host: 4434
   # MySQL
@@ -43,6 +43,21 @@ Vagrant.configure(2) do |config|
     
     config.ssh.forward_agent = true 
 
-    config.vm.provision :shell, path: "bootstrap.sh"
-    config.vm.provision :shell, path: "node.sh", privileged: false
+    # update linux before installs
+    config.vm.provision :shell, path: "assets/bootstrap.sh"
+    
+    # set up nginx
+    config.vm.provision :shell, path: "assets/nginx.sh"
+    
+    # set up php-fpm
+    config.vm.provision :shell, path: "assets/php-fpm.sh"
+    
+    # set up percona
+    config.vm.provision :shell, path: "assets/percona.sh"
+    
+    # git, sass
+    config.vm.provision :shell, path: "assets/misc.sh"
+    
+    # node, yeoman, bower, gulp
+    config.vm.provision :shell, path: "assets/node.sh", privileged: false
 end
