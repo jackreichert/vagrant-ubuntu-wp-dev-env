@@ -9,7 +9,7 @@ sudo apt-get install -y php5 php5-common php5-mysql php5-xmlrpc php5-cgi php5-cu
 sudo cat << 'EOF'
 <?php phpinfo();
 EOF
-) > /var/www/html/play/index.php
+) > /var/www/html/play/info.php
 
 # restart after reconfig
 sudo service php5-fpm restart
