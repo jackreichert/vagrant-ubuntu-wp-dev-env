@@ -14,23 +14,24 @@ Vagrant.configure(2) do |config|
   # boxes at https://atlas.hashicorp.com/search.
   config.vm.box = "ubuntu/trusty64"
   config.vm.box_url = "https://cloud-images.ubuntu.com/vagrant/trusty/current/trusty-server-cloudimg-amd64-vagrant-disk1.box"
-    
+
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
   config.vm.network "private_network", ip: "192.168.33.10"
   config.vm.hostname = 'play.lcl'
-    
+
   # nginx ports
   config.vm.network :forwarded_port, guest: 80, host: 8089
   config.vm.network :forwarded_port, guest: 443, host: 4434
   # MySQL
-  config.vm.network :forwarded_port, guest: 3306, host: 3307    
-    
+  config.vm.network :forwarded_port, guest: 3306, host: 3307
+
   # Share an additional folder to the guest VM. The first argument is
   # the path on the host to the actual folder. The second argument is
   # the path on the guest to mount the folder. And the optional third
   # argument is a set of non-required options.
-  config.vm.synced_folder "./", "/var/www/", owner: 'vagrant', group: 'www-data', mount_options: ["dmode=775", "fmode=664"]
+  config.vm.synced_folder "./www", "/var/www/", owner: 'vagrant', group: 'www-data', mount_options: ["dmode=775", "fmode=664"]
+  config.vm.synced_folder "./assets", "/vagrant/"
 
   # Provider-specific configuration so you can fine-tune various
   # backing providers for Vagrant. These expose provider-specific options.
@@ -40,24 +41,30 @@ Vagrant.configure(2) do |config|
   #   # Customize the amount of memory on the VM:
      vb.memory = "1024"
    end
-    
-    config.ssh.forward_agent = true 
 
-    # update linux before installs
+    config.ssh.forward_agent = true
+
+    # update clean linux before installs
+    config.vm.provision :shell, path: "assets/clean-update.sh"
+
+    # dev tools, python, git
     config.vm.provision :shell, path: "assets/bootstrap.sh"
-    
+
     # set up nginx
     config.vm.provision :shell, path: "assets/nginx.sh"
-    
+
     # set up php-fpm
     config.vm.provision :shell, path: "assets/php-fpm.sh"
-    
+
     # set up percona
     config.vm.provision :shell, path: "assets/percona.sh"
-    
-    # git, sass
-    config.vm.provision :shell, path: "assets/misc.sh"
-    
-    # node, yeoman, bower, gulp
-    config.vm.provision :shell, path: "assets/node.sh", privileged: false
+
+    # node, bower, webpack, wp-cli
+    config.vm.provision :shell, path: "assets/tools.sh", privileged: false
+
+    # update clean linux
+    config.vm.provision :shell, path: "assets/clean-update.sh"
+
+    # setup wp
+    config.vm.provision :shell, path: "assets/setup-site.sh", privileged: false
 end

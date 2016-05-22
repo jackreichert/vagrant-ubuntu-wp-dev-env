@@ -1,9 +1,7 @@
+LC_ALL=C.UTF-8 add-apt-repository -y ppa:ondrej/php
+apt-get update
 
-sudo add-apt-repository -y ppa:ondrej/php5-5.6
-sudo apt-get update
-
-# install php
-sudo apt-get install -y php5 php5-common php5-mysql php5-xmlrpc php5-cgi php5-curl php5-gd php5-cli php5-fpm php-apc php5-dev php5-mcrypt  php5-tidy
+apt-get install -y php5.6 php5.6-bcmath php5.6-cli php5.6-common php5.6-curl php5.6-dev php5.6-fpm php5.6-gd php5.6-json php5.6-mbstring php5.6-mcrypt php5.6-mysql php5.6-tidy php5.6-xml php5.6-xmlrpc php5.6-zip
 
 (
 sudo cat << 'EOF'
@@ -12,4 +10,4 @@ EOF
 ) > /var/www/html/play/info.php
 
 # restart after reconfig
-sudo service php5-fpm restart
+service php5.6-fpm restart
