@@ -15,7 +15,7 @@ On your host machine add `192.168.33.10  play.lcl` to your hosts file
 Will create a WordPress install with login admin:admin
 
 ## NOTE: For Upgraders
-If you are actively using this, don't git pull, your site won't work as-is. I have updated the file structure of the server so instead of running from /var/www/html/play, it now runs from /var/www/play. Clone this to a separate folder, vagrant up. Once it's up and running you can move over the files you need.
+If you are actively using this, don't git pull, your site won't work as-is. I have updated the file structure of the server so instead of running from /var/www/play, it now runs from /var/www/html. Clone this to a separate folder, vagrant up. Once it's up and running you can move over the files you need.
 
 ## Specs
 * Ubuntu Trusty 64
