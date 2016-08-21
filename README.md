@@ -20,8 +20,10 @@ If you are actively using this, don't git pull, your site won't work as-is. I ha
 ## Specs
 * Ubuntu Trusty 64
 * Percona 5.6
-* Nginx 1.4.6
-* PHP-fpm 5.6
+* Nginx 1.11
+* PHP-fpm 7.0
+* wp-cli
+* phpunit
 * Node/Npm default
 * Bower
 * Webpack

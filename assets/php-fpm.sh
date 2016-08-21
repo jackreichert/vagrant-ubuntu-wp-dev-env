@@ -1,13 +1,13 @@
-LC_ALL=C.UTF-8 add-apt-repository -y ppa:ondrej/php
+add-apt-repository -y ppa:ondrej/php
 apt-get update
 
-apt-get install -y php5.6 php5.6-bcmath php5.6-cli php5.6-common php5.6-curl php5.6-dev php5.6-fpm php5.6-gd php5.6-json php5.6-mbstring php5.6-mcrypt php5.6-mysql php5.6-tidy php5.6-xml php5.6-xmlrpc php5.6-zip
+apt-get install -y php7.0 php7.0-bcmath php7.0-cli php7.0-common php7.0-curl php7.0-dev php7.0-fpm php7.0-gd php7.0-json php7.0-mbstring php7.0-mcrypt php7.0-mysql php7.0-tidy php7.0-xml php7.0-xmlrpc php7.0-zip
 
 (
 sudo cat << 'EOF'
 <?php phpinfo();
 EOF
-) > /var/www/html/play/info.php
+) > /var/www/html/index.php
 
 # restart after reconfig
-service php5.6-fpm restart
+service php7.0-fpm restart
