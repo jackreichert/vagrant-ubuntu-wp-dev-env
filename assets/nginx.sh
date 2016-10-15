@@ -1,3 +1,9 @@
+echo '~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~'
+echo '*                                  *'
+echo '*             nginx.sh             *'
+echo '*                                  *'
+echo '~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~'
+
 add-apt-repository -y ppa:chris-lea/nginx-devel
 apt-get update
 

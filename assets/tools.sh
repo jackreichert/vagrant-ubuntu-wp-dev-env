@@ -1,3 +1,9 @@
+echo '~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~'
+echo '*                            *'
+echo '*          tools.sh          *'
+echo '*                            *'
+echo '~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~'
+
 # nodejs
 cd /home/vagrant
 

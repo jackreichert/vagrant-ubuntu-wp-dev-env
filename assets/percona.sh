@@ -1,3 +1,9 @@
+echo '~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~'
+echo '*                              *'
+echo '*          percona.sh          *'
+echo '*                              *'
+echo '~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~'
+
 # percona
 apt-key adv --keyserver keys.gnupg.net --recv-keys 1C4CBDCDCD2EFD2A
 bash -c 'echo deb http://repo.percona.com/apt trusty main >> /etc/apt/sources.list'

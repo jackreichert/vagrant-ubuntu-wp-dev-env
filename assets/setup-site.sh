@@ -1,3 +1,9 @@
+echo '~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~'
+echo '*                                 *'
+echo '*          setup-site.sh          *'
+echo '*                                 *'
+echo '~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~'
+
 cd /var/www/html
 wp core download
 wp core config --dbname=play_lcl --dbuser=root --dbpass=root --dbhost=localhost

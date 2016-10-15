@@ -18,7 +18,7 @@ Will create a WordPress install with login admin:admin
 If you are actively using this, don't git pull, your site won't work as-is. I have updated the file structure of the server so instead of running from /var/www/play, it now runs from /var/www/html. Clone this to a separate folder, vagrant up. Once it's up and running you can move over the files you need.
 
 ## Specs
-* Ubuntu Trusty 64
+* Ubuntu Xenial 64
 * Percona 5.6
 * Nginx 1.11
 * PHP-fpm 7.0

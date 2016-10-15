@@ -1,2 +1,8 @@
+echo '~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~'
+echo '*                                *'
+echo '*          bootstrap.sh          *'
+echo '*                                *'
+echo '~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~'
+
 # dev tools
 apt-get install -y build-essential python-software-properties git
