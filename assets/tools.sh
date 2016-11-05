@@ -5,21 +5,12 @@ echo '*                            *'
 echo '~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~'
 
 # nodejs
-cd /home/vagrant
-
-# nvm / node / npm
-wget -qO- https://raw.github.com/creationix/nvm/master/install.sh | sh
-
-# This enables NVM without a logout/login
-export NVM_DIR="/home/vagrant/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-
-# Install a node and alias
-nvm install node
+sudo apt-get install -y npm
 
 # node devtools
-npm install -g bower webpack
+sudo npm install -g bower webpack react-app
 
+cd ~/
 # wp-cli http://wp-cli.org
 curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
 chmod +x wp-cli.phar

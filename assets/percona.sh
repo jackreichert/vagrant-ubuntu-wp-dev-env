@@ -11,7 +11,7 @@ bash -c 'echo deb-src http://repo.percona.com/apt trusty main >> /etc/apt/source
 apt-get -y update
 echo "percona-server-server-5.6 percona-server-server/root_password password root" | sudo debconf-set-selections
 echo "percona-server-server-5.6 percona-server-server/root_password_again password root" | sudo debconf-set-selections
-apt-get install -qq -y percona-server-server-5.6 percona-server-client-5.6
+apt-get install -qq -y percona-server-server-5.6 percona-server-client-5.6 --allow-unauthenticated
 
 # restart after reconfig
 service mysql restart
