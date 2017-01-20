@@ -8,7 +8,7 @@ echo '~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~'
 sudo apt-get install -y npm
 
 # node devtools
-sudo npm install -g bower webpack react-app
+sudo npm install -g bower webpack
 
 cd ~/
 # wp-cli http://wp-cli.org
