@@ -13,7 +13,7 @@ apt-get install -y php7.0 php7.0-bcmath php7.0-cli php7.0-common php7.0-curl php
 sudo cat << 'EOF'
 <?php phpinfo();
 EOF
-) > /var/www/html/index.php
+) > /var/www/html/info.php
 
 # restart after reconfig
 service php7.0-fpm restart
