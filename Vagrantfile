@@ -47,7 +47,7 @@ Vagrant.configure(2) do |config|
     # update clean linux before installs
     config.vm.provision :shell, path: "assets/clean-update.sh"
 
-    # dev tools, python, git
+    # dev tools, python, git, sendmail
     config.vm.provision :shell, path: "assets/bootstrap.sh"
 
     # set up nginx
