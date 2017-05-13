@@ -4,9 +4,13 @@ echo '*          bootstrap.sh          *'
 echo '*                                *'
 echo '~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~'
 
+# git
+apt-add-repository ppa:git-core/ppa
+apt-get update
+apt-get install git
+
 # dev tools
-apt-get install -y build-essential git  libssl-dev libffi-dev
-apt-get install -y python3-software-properties python3-pip python3-dev
+apt-get install -y build-essential libssl-dev libffi-dev
 
 # sendmail install and configure 
 apt-get install -y sendmail

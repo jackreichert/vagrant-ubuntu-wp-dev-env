@@ -4,10 +4,9 @@ echo '*             nginx.sh             *'
 echo '*                                  *'
 echo '~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~'
 
+# nginx
 add-apt-repository -y ppa:chris-lea/nginx-devel
 apt-get update
-
-# nginx
 apt-get install -y nginx
 
 # sendfile messes with development environments

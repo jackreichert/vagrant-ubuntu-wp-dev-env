@@ -46,8 +46,11 @@ Vagrant.configure(2) do |config|
     # update clean linux before installs
     config.vm.provision :shell, path: "assets/clean-update.sh"
 
-    # dev tools, python, git, sendmail
+    # dev tools, git, sendmail
     config.vm.provision :shell, path: "assets/bootstrap.sh"
+
+    # python, pip, dev
+    config.vm.provision :shell, path: "assets/python.sh"
 
     # set up nginx
     config.vm.provision :shell, path: "assets/nginx.sh"
@@ -58,7 +61,10 @@ Vagrant.configure(2) do |config|
     # set up percona
     config.vm.provision :shell, path: "assets/percona.sh"
 
-    # node, bower, webpack, wp-cli
+    # node, webpack, grunt-cli,
+    config.vm.provision :shell, path: "assets/node.sh", privileged: false
+
+    # wp-cli phpunit
     config.vm.provision :shell, path: "assets/tools.sh", privileged: false
 
     # update clean linux
