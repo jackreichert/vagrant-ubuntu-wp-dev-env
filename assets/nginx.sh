@@ -15,6 +15,11 @@ sed -i 's/sendfile on/sendfile off/g' /etc/nginx/nginx.conf
 # restart after reconfig
 service nginx restart
 
+# set up self-signed certs
+mkdir -p /etc/pki/ssl
+cd /etc/pki/ssl
+openssl genrsa -out play.lcl.key 2048
+openssl req -new -x509 -key play.lcl.key -out play.lcl.cert -days 3650 -subj /CN=play.lcl
 
 # create missing directories
 mkdir -p /var/www/html

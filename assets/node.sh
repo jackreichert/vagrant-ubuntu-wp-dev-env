@@ -12,7 +12,7 @@ source ~/.nvm/nvm.sh
 echo "source ~/.nvm/nvm.sh" >> ~/.bashrc
 
 nvm install node
-nvm use default
+nvm use node
 
 # yarn
 curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
@@ -20,4 +20,4 @@ echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/source
 sudo apt-get update && sudo apt-get -y install yarn
 
 # node devtools
-npm install -g bower webpack grunt-cli --no-bin-links
+npm install -g webpack grunt-cli --no-bin-links
