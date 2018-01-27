@@ -30,7 +30,7 @@ Vagrant.configure(2) do |config|
   # the path on the guest to mount the folder. And the optional third
   # argument is a set of non-required options.
   config.vm.synced_folder "./assets", "/vagrant"
-  config.vm.synced_folder "./html", "/var/www/html"#, owner: 'vagrant', group: 'www-data', mount_options: ["dmode=775", "fmode=664"] # this only works on vagrant reload
+  config.vm.synced_folder "./html", "/var/www/html", create: true #, owner: 'vagrant', group: 'www-data', mount_options: ["dmode=775", "fmode=664"] # this only works on vagrant reload
 
   # Provider-specific configuration so you can fine-tune various
   # backing providers for Vagrant. These expose provider-specific options.
@@ -46,7 +46,7 @@ Vagrant.configure(2) do |config|
     # update clean linux before installs
     config.vm.provision :shell, path: "assets/clean-update.sh"
 
-    # dev tools, python, git, sendmail
+    # dev tools, git, sendmail
     config.vm.provision :shell, path: "assets/bootstrap.sh"
 
     # python, pip, dev
@@ -64,7 +64,7 @@ Vagrant.configure(2) do |config|
     # node, yarn, grunt-cli
     config.vm.provision :shell, path: "assets/node.sh", privileged: false
 
-    # node, bower, webpack, wp-cli
+    # wp-cli phpunit
     config.vm.provision :shell, path: "assets/tools.sh", privileged: false
 
     # update clean linux

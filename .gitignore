@@ -1,4 +1,5 @@
 .vagrant
-.idea
+.idea/
 *.DS_Store
 ubuntu-*.log
+html/
