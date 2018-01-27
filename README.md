@@ -19,11 +19,18 @@ If you are actively using this, don't git pull, your site won't work as-is. I ha
 
 ## Specs
 * Ubuntu Xenial 64
-* Percona 5.6
-* Nginx 1.11
-* PHP-fpm 7.0
+* Percona 5.7
+* Nginx 1.13
+* PHP-fpm 7.1
 * wp-cli
 * phpunit
+* python 3
 * Node/Npm default
 * Bower
 * Webpack
+
+## Change log
+== Version 2.0 ==
+- PHP7.1
+- Percona 5.7
+- Python3

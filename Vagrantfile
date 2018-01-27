@@ -37,7 +37,7 @@ Vagrant.configure(2) do |config|
   # Example for VirtualBox:
   #
    config.vm.provider "virtualbox" do |vb|
-  #   # Customize the amount of memory on the VM:
+  # Customize the amount of memory on the VM:
      vb.memory = "1024"
    end
 
@@ -49,6 +49,9 @@ Vagrant.configure(2) do |config|
     # dev tools, python, git, sendmail
     config.vm.provision :shell, path: "assets/bootstrap.sh"
 
+    # python, pip, dev
+    config.vm.provision :shell, path: "assets/python.sh"
+
     # set up nginx
     config.vm.provision :shell, path: "assets/nginx.sh"
 
@@ -57,6 +60,9 @@ Vagrant.configure(2) do |config|
 
     # set up percona
     config.vm.provision :shell, path: "assets/percona.sh"
+
+    # node, yarn, grunt-cli
+    config.vm.provision :shell, path: "assets/node.sh", privileged: false
 
     # node, bower, webpack, wp-cli
     config.vm.provision :shell, path: "assets/tools.sh", privileged: false
