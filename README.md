@@ -21,7 +21,7 @@ If you are actively using this, don't git pull, your site won't work as-is. I ha
 * Ubuntu Xenial 64
 * Percona 5.7
 * Nginx 1.13
-* PHP-fpm 7.1
+* PHP-fpm 7.2
 * wp-cli
 * phpunit
 * python 3
